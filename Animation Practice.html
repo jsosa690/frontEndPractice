@@ -6,35 +6,57 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <div class="parent">
-          <div class="dropzone-parent">
-            dropzone
-            <div class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+      <div class="parent">
+        <div class="dropzone-parent">
+          dropzone
+          <div class="total-1" id="total-1">0</div>
+          <div class="dropzone-1" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        </div>
+        <div class="dropzone-parent">
+          dropzone
+          <div class="total-2" id="total-2">0</div>
+          <div class="dropzone-2" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        </div>
+      </div>
+
+      <div class="pending-drag">
+        <div class="origin" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+          <div id="20" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
+            20
           </div>
-          <div class="dropzone-parent">
-            dropzone
-            <div class="dropzone" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+          <div id="15" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
+            15
+          </div>
+          <div id="25" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
+            25
+          </div>
+          <div id="10" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
+            10
+          </div>
+          <div id="2" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
+            2
           </div>
         </div>
+      </div>
 
-        <div class="pending-drag">
-            <div class="origin" ondragover="onDragOver(event);" ondrop="onDrop(event);">
-              <div id="draggable-1" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-                draggable
-              </div>
-              <div id="draggable-2" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-                draggable
-              </div>
-              <div id="draggable-3" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-                draggable
-              </div>
-            </div>
+        
+      <div class="progress"></div>
+
+      <div class="cube-wrap">
+        <div class="cube">
+          <div class="side top"></div>
+          <div class="side bottom"></div>
+          <div class="side front"></div>
+          <div class="side back"></div>
+          <div class="side left"></div>
+          <div class="side right"></div>
         </div>
+      </div>
 
-        <div class="bubble1"></div>
-        <div class="bubble2"></div>
-        <div class="bubble3"></div>
-        <div class="bubble4"></div>
-        <div class="bubble5"></div>
+      <div class="bubble1"></div>
+      <div class="bubble2"></div>
+      <div class="bubble3"></div>
+      <div class="bubble4"></div>
+      <div class="bubble5"></div>
     </body>
 </html>

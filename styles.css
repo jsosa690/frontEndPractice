@@ -1,5 +1,4 @@
 .parent {
-    border: 2px solid #3112df;
     color: black;
     display: flex;
     font-family: sans-serif;
@@ -7,7 +6,6 @@
 }
 
 .pending-drag {
-    border: 2px solid hsl(43, 85%, 47%);
     color: black;
     display: flex;
     font-family: sans-serif;
@@ -17,40 +15,131 @@
 }
 
 .origin {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    padding: 10px;
+  background-color:cadetblue;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
 }
 
-.draggable {
-    background-color: #4AAE9B;
-    font-weight: normal;
-    border: 1px solid #000;
-    width: 30%;
-    margin: 10px 5px 10px 5px;
-    padding: 10px;
-    float: left;
+.draggable {  
+  border-radius: 5px;
+  background-color: #4AAE9B;
+  font-weight: normal;
+  border: 1px solid #000;
+  width: 200px;
+  height: 20px;
+  margin: 10px 5px 10px 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.draggable:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19);
 }
 
 .dropzone-parent {
-    background-color: #6DB65B;
+    background-color: #5bb3b6;
     flex-basis: 100%;
     flex-grow: 1;
     padding: 10px;
-    text-align: justify;
+    width: 50%;
+    text-align: center;
 }
 
-.dropzone {
-    background-color: #6DB65B;
-    border: 2px solid black;
-    flex-basis: 100%;
-    flex-grow: 1;
-    padding: 10px;
-    text-align: justify;
-    height: 200px;
+.dropzone-1 {
+  border-radius: 5px;
+  background-color: #3c7779;
+  justify-content: center;
+  border: 2px solid black;
+  display: flex;
+  padding: 10px;
+  height: 200px;
 }
+
+.dropzone-2 {
+  border-radius: 5px;
+  background-color: #3c7779;
+  justify-content: center;
+  border: 2px solid black;
+  display: flex;
+  padding: 10px;
+  height: 200px;
+}
+
+.progress {
+  height: 3px;
+  width: 0%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: progress 1s linear;
+}
+@keyframes progress {
+  to {
+    background-color: rgb(20, 255, 226);
+    width: 100%;
+  }
+}
+
+.cube-wrap {
+  --size: 30vmin;
+  position: fixed;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  perspective: 100vmin;
+}
+.cube {
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+  animation: cube 1s linear;
+}
+@keyframes cube {
+  to {
+    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  }
+}
+
+.side {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: #eee;
+  backface-visibility: visible;
+  top: calc(var(--size) * -.5);
+  left: calc(var(--size) * -.5);
+}
+.top {
+  background-color: #fff;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+}
+.bottom {
+  background-color: #999;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+}
+.left {
+  background-color: #ccc;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+}
+.right {
+  background-color: #ddd;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+}
+.front {
+  background-color: #aaa;
+  transform: translateZ(calc(var(--size) * .5));
+}
+.back {
+  background-color: #bbb;
+  transform: translateZ(calc(var(--size) * -.5));
+}
+
 
   @keyframes bubble-up {
     0% {
@@ -72,7 +161,7 @@
     background-color: rgba(150, 100, 90, .3);
     border-radius: 50%;
 
-    animation: bubble-up 1s linear infinite;
+    animation: bubble-up 1s cubic-bezier(0.75, 0.75, 0.95, 0.95) infinite;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
     animation-iteration-count: 1;
@@ -87,7 +176,7 @@
     background-color: rgba(150, 100, 90, .3);
     border-radius: 50%;
 
-    animation: bubble-up 1s linear infinite;
+    animation: bubble-up 1s ease-in infinite;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
     animation-iteration-count: 1;
@@ -102,7 +191,7 @@
     background-color: rgba(50, 122, 72, 0.3);
     border-radius: 50%;
 
-    animation: bubble-up 1s linear infinite;
+    animation: bubble-up 1s cubic-bezier(0.75, 0.75, 0.9, 0.9) infinite;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
     animation-iteration-count: 1;
@@ -117,7 +206,7 @@
     background-color: rgba(200, 100, 200, .3);
     border-radius: 50%;
 
-    animation: bubble-up 1s linear infinite;
+    animation: bubble-up 1s cubic-bezier(0.75, 0.75, 0.9, 0.9) infinite;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
     animation-iteration-count: 1;
@@ -132,7 +221,7 @@
     background-color: rgba(150, 250, 90, .3);
     border-radius: 50%;
 
-    animation: bubble-up 1s linear infinite;
+    animation: bubble-up 1s cubic-bezier(0.75, 0.75, 0.9, 0.9) infinite;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
     animation-iteration-count: 1;
