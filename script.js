@@ -19,17 +19,26 @@ function onDragOver(event) {
 }
 
 function onDrop(event) {
-    const id = event
-      .dataTransfer
-      .getData('text');
+    const id = event.dataTransfer.getData('text');
     const draggableElement = document.getElementById(id);
     const dropzone = event.target;
     if(!dropzone.draggable) {
-        dropzone.appendChild(draggableElement);
-        updateSum(draggableElement.id, dropzone)
+
+        if((draggableElement.className == "draggable-title" && dropzone.className == "dropzone-1") 
+        || (draggableElement.className == "draggable-chart" && dropzone.className == "dropzone-2"))
+        {
+          dropzone.appendChild(draggableElement);
+          //show whether correct or not
+          updateSum(draggableElement.id, dropzone)
+        }
+        
     } else {
-        dropzone.parentElement.appendChild(draggableElement);
-        updateSum(draggableElement.id, dropzone.parentElement)
+      if((draggableElement.className == "draggable-title" && dropzone.parentElement.className == "dropzone-1") 
+        || (draggableElement.className == "draggable-chart" && dropzone.parentElement.className == "dropzone-2"))
+        {
+          dropzone.parentElement.appendChild(draggableElement);
+          updateSum(draggableElement.id, dropzone.parentElement)
+        }
     }
     event.dataTransfer.clearData();
 }

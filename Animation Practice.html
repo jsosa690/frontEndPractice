@@ -6,15 +6,15 @@
         <script src="script.js"></script>
     </head>
     <body>
-      <div style="height: 100vh; padding: 0px 50px; max-width: 1000px; margin: auto;">
-        <h2><span style="color: #EC694B;">Choose your own data viz:</span> Play Leff’s game to explore words and charts</h2>
+      <div style="height: 100vh; padding: 30px 50px; max-width: 1000px; margin: auto;">
+        <h1><span style="color: #EC694B;">Choose your own data viz:</span> Play Leff’s game to explore words and charts</h1>
         <p>
           Our tongue-in-cheek exploration for editors and designers sheds light on the interdependence 
           of chart formats and their descriptive headlines. To help take you on this journey, we decided to 
           drill down on late-night grub preferences of college students. Because who doesn’t want to see 
           data that shows the arduous process of culinary decision making at 3 a.m.?
         </p>
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; margin-top: 50px;">
           <div style="max-width: 30%; border-radius: 20px; background-color: #EC694B33; display: flex; flex-direction: column;">
             <img src="./looney-4 1.png" style="width: 80%; object-fit: contain; margin: auto;">
             <span style="display: block; background-color: #ec694b; color: #FFFFFF; text-align: center;">01: DELIVERY</span></div>
@@ -27,57 +27,45 @@
         </div>
       </div>
 
-      <div style="height: 100vh; padding: 0px 50px; max-width: 1000px; margin: auto;">
-        <h2><span style="color: #EC694B;">Choose your own data viz:</span> Play Leff’s game to explore words and charts</h2>
-        <p>
-          Our tongue-in-cheek exploration for editors and designers sheds light on the interdependence 
-          of chart formats and their descriptive headlines. To help take you on this journey, we decided to 
-          drill down on late-night grub preferences of college students. Because who doesn’t want to see 
-          data that shows the arduous process of culinary decision making at 3 a.m.?
-        </p>
-        <div style="display: flex; justify-content: space-between;">
-          <div style="max-width: 30%; border-radius: 20px; background-color: #EC694B33; display: flex; flex-direction: column;">
-            <img src="./looney-4 1.png" style="width: 80%; object-fit: contain; margin: auto;">
-            <span style="display: block; background-color: #ec694b; color: #FFFFFF; text-align: center;">01: DELIVERY</span></div>
-          <div style="max-width: 30%; border-radius: 20px; background: #54AFAB33; display: flex; flex-direction: column;">
-            <img src="./looney-pizza-2 1.png" style="width: 80%; object-fit: contain; margin: auto;">
-            <span style="display: block; background-color: #54AFAB; color: #FFFFFF; text-align: center;">02: TOPPINGS</span></div>
-          <div style="max-width: 30%; border-radius: 20px; background: #B9C44333;">
-            <img src="./looney-21 1.png" style="width: 100%; object-fit: contain;">
-            <span style="display: block; background-color: #B9C443; color: #FFFFFF; text-align: center;">03: SHARING</span></div>
-        </div>
-      </div>
+      <div style="height: 100vh; padding: 30px 50px; max-width: 1000px; margin: auto; display: flex; justify-content: space-between;">
 
-      
-      <div class="parent">
-        <div class="dropzone-parent">
-          dropzone
-          <div class="total-1" id="total-1">0</div>
-          <div class="dropzone-1" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+        <div style="width: 30%;">
+          <h1>A taste for toppings</h1>
+          <p>Let's dig into the most popular choice-pizza-to see what insights we may be able to glean.</p>
+          
+          <p><strong>1. SELECT A CHART STYLE</strong></p>
+          <div class="pending-drag">
+            <div class="title-origin" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+              <div id="segmented-column" class="draggable-chart" draggable="true" ondragstart="onDragStart(event);">         
+                <img style="object-fit: contain; width: 100%;" src="./CHART OPTION 1.png" alt="">
+              </div>
+              <div id="tree-map" class="draggable-chart" draggable="true" ondragstart="onDragStart(event);">         
+                <img style="object-fit: contain; width: 100%;" src="./CHART OPTION 2.png" alt="">
+              </div>
+            </div>
+          </div>
+          
+          <p><strong>2. SELECT A HEADING</strong></p>
+          <div class="pending-drag">
+            <div class="chart-origin" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+              <div id="segmented-column" class="draggable-title" draggable="true" ondragstart="onDragStart(event);">         
+                Upper-level students more often resort to a fully-loaded pizza.
+              </div>
+              <div id="tree-map" class="draggable-title" draggable="true" ondragstart="onDragStart(event);">         
+                Upper-level students, exhausted by studying, find the cognitive load of narrowing down pizza ingredients too much to bear.
+              </div>
+            </div>
+          </div>
+          
         </div>
-        <div class="dropzone-parent">
-          dropzone
-          <div class="total-2" id="total-2">0</div>
-          <div class="dropzone-2" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
-        </div>
-      </div>
-
-      <div class="pending-drag">
-        <div class="origin" ondragover="onDragOver(event);" ondrop="onDrop(event);">
-          <div id="20" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-            20
+        <div style="width: 65%;">
+          <div class="feedback">
+            <div id="correct"></div>
+            <div id="incorrect"></div>
           </div>
-          <div id="15" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-            15
-          </div>
-          <div id="25" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-            25
-          </div>
-          <div id="10" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-            10
-          </div>
-          <div id="2" class="draggable" draggable="true" ondragstart="onDragStart(event);">         
-            2
+          <div class="dropzone-parent">
+            <div class="dropzone-1" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+            <div class="dropzone-2" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
           </div>
         </div>
       </div>
