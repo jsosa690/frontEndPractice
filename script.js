@@ -9,11 +9,6 @@ function onDragStart(event) {
     }
   }
 
-function updateTotal(value, dropzone) {
-  let startValue = Number(document.getElementById(dropzone).innerHTML);
-  document.getElementById(dropzone).innerHTML = startValue - Number(value);
-}
-
 function onDragOver(event) {
     event.preventDefault();
 }
@@ -29,7 +24,6 @@ function onDrop(event) {
         {
           dropzone.appendChild(draggableElement);
           //show whether correct or not
-          updateSum(draggableElement.id, dropzone)
         }
         
     } else {
@@ -37,23 +31,7 @@ function onDrop(event) {
         || (draggableElement.className == "draggable-chart" && dropzone.parentElement.className == "dropzone-2"))
         {
           dropzone.parentElement.appendChild(draggableElement);
-          updateSum(draggableElement.id, dropzone.parentElement)
         }
     }
     event.dataTransfer.clearData();
 }
-
-function updateSum(value, dropzone) {
-  if (dropzone.className === 'dropzone-1') {
-    let startValue = Number(document.getElementById("total-1").innerHTML);
-    document.getElementById("total-1").innerHTML = startValue + Number(value);
-  } else if (dropzone.className === 'dropzone-2') {
-    let startValue = Number(document.getElementById("total-2").innerHTML);
-    document.getElementById("total-2").innerHTML = startValue + Number(value);
-  }
-  
-}
-
-window.addEventListener('scroll', () => {
-  document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-}, false);
